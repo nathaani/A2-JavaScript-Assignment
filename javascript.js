@@ -1,4 +1,4 @@
-//TABLE VISITORS//
+//TABLE VISITORS///////////////////////////////////////////////////////////////
 let monthlyVisitors = {
     "months": ["April", "May", "June", "July", "August", "September"],
     "visitors": ["5k", "3k", "500", "2k", "1k", "1k"]
@@ -28,18 +28,41 @@ for (let i = 0; i < monthlyVisitors.months.length; i++) {
     tableRow.appendChild(tableData);
     visitorsTable.appendChild(tableRow);
 }
+//COOKIES//////////////////////////////////////////////////////////////////////
+let footer = document.querySelector("#footer");
+let cookies = document.querySelector("#cookies");
+let cookiesText = document.querySelector("#cookiesText");
 
-//HUGH CONTRAST//
+let click = false;
+
+cookies.innerHTML = '<a href="#" id="accept-cookies">Accept Cookies</a>';
+cookiesText.innerHTML = 'This website uses cookies to improve your experiece, by clicking "accept cookies" you consent to our use of cookies.'
+
+cookies.addEventListener("click", whenClicked);
+
+function whenClicked(event) {
+    if (click) {
+        cookies.innerHTML = '<a href="#" id="accept-cookies">Accept Cookies</a>';
+        cookiesText.innerHTML = 'This website uses cookies to improve your experiece, by clicking "accept cookies" you consent to our use of cookies.'
+
+        click = false;
+    } else {
+        cookies.innerHTML = '<a href="#" id="accept-cookies">Revoke Cookies</a>';
+        cookiesText.innerHTML = 'You have accepted the usage of cookies to improve your experiece on this website, would you like to revoke?'
+
+        click = true;
+    }
+}
+//HIGH CONTRAST////////////////////////////////////////////////////////////////////////
 
 let hcButton = false;
 
-const button = document.querySelector("#button");
-
-button.addEventListener('click', whenClicked);
+let button = document.querySelector("#button");
 
 let hc = document.querySelector("#highContrast");
 
-function whenClicked(event) {
+button.addEventListener('click', buttonClicked);
+function buttonClicked(event) {
 
     if (hcButton) {
         hc.style.backgroundColor = 'white';
@@ -69,7 +92,7 @@ document.addEventListener('keydown', function (event) {
             hc.style.lineHeight = "1.2";
             hc.style.margin = '0';
             hc.style.padding = '0';
-    
+
             hcButton = false;
         } else {
             hc.style.backgroundColor = 'black';
@@ -77,9 +100,9 @@ document.addEventListener('keydown', function (event) {
             hc.style.lineHeight = "2";
             hc.style.margin = '10px';
             hc.style.padding = '10px';
-    
+
             hcButton = true;
-    
+
         }
     }
 });
