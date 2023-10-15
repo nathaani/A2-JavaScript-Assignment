@@ -1,6 +1,6 @@
 //TABLE VISITORS//
 let monthlyVisitors = {
-    "months": ["April", "May", "June", "July",  "August",  "September"],
+    "months": ["April", "May", "June", "July", "August", "September"],
     "visitors": ["5k", "3k", "500", "2k", "1k", "1k"]
 
 }
@@ -37,9 +37,10 @@ const button = document.querySelector("#button");
 
 button.addEventListener('click', whenClicked);
 
-function whenClicked(event){
-    let hc = document.querySelector("#highContrast");
-    
+let hc = document.querySelector("#highContrast");
+
+function whenClicked(event) {
+
     if (hcButton) {
         hc.style.backgroundColor = 'white';
         hc.style.color = 'black';
@@ -57,4 +58,28 @@ function whenClicked(event){
 
         hcButton = true;
 
-}}
+    }
+}
+
+document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && event.key === 'a') {
+        if (hcButton) {
+            hc.style.backgroundColor = 'white';
+            hc.style.color = 'black';
+            hc.style.lineHeight = "1.2";
+            hc.style.margin = '0';
+            hc.style.padding = '0';
+    
+            hcButton = false;
+        } else {
+            hc.style.backgroundColor = 'black';
+            hc.style.color = 'white';
+            hc.style.lineHeight = "2";
+            hc.style.margin = '10px';
+            hc.style.padding = '10px';
+    
+            hcButton = true;
+    
+        }
+    }
+});
