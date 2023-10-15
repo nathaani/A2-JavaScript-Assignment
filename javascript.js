@@ -28,3 +28,33 @@ for (let i = 0; i < monthlyVisitors.months.length; i++) {
     tableRow.appendChild(tableData);
     visitorsTable.appendChild(tableRow);
 }
+
+//HUGH CONTRAST//
+
+let hcButton = false;
+
+const button = document.querySelector("#button");
+
+button.addEventListener('click', whenClicked);
+
+function whenClicked(event){
+    let hc = document.querySelector("#highContrast");
+    
+    if (hcButton) {
+        hc.style.backgroundColor = 'white';
+        hc.style.color = 'black';
+        hc.style.lineHeight = "1.2";
+        hc.style.margin = '0';
+        hc.style.padding = '0';
+
+        hcButton = false;
+    } else {
+        hc.style.backgroundColor = 'black';
+        hc.style.color = 'white';
+        hc.style.lineHeight = "2";
+        hc.style.margin = '10px';
+        hc.style.padding = '10px';
+
+        hcButton = true;
+
+}}
