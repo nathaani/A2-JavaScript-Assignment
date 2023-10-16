@@ -43,11 +43,9 @@ function buttonClicked(event) {
         hc.style.margin = "0.1";
         hc.style.padding = "0";
         
-
-        //loop through each link 
-        links.forEach(link => {
-            link.style.color = "blue";
-        });
+        for(let i = 0; i<links.length; i++){
+            links[i].style.color = "blue";
+        }
 
         hcButton = false;
     } else {
@@ -56,10 +54,10 @@ function buttonClicked(event) {
         hc.style.lineHeight = "2";
         hc.style.margin = "10px";
         hc.style.padding = "10px";
-
-        links.forEach(link => {
-            link.style.color = "white";
-        });
+       
+        for(let i = 0; i<links.length; i++){
+            links[i].style.color = "white";
+        }
 
         hcButton = true;
 
