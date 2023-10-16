@@ -18,7 +18,7 @@ function whenClicked(event) {
         click = false;
     } else {
         cookies.innerHTML = '<a href="#" class="accept-cookies">Revoke Cookies</a>';
-        cookiesText.innerHTML = 'You have accepted the usage of cookies to improve your experiece on this website, would you like to revoke?'
+        cookiesText.innerHTML = 'Cookies were accepted. Would you like to revoke?'
 
         click = true;
     }
